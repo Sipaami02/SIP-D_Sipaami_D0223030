@@ -11,25 +11,33 @@ return new class extends Migration
      */
     public function up(): void
     {
-         // Membuat tabel admin
-         Schema::create('admins', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained('users'); // Relasi ke tabel users
-            $table->timestamps();
+        // Tabel Admin
+        Schema::create('admins', function (Blueprint $table) {
+            $table->id(); // Primary key
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); // relasi ke tabel users
+            $table->string('nama_admin'); // Nama lengkap admin
+            $table->string('no_hp')->nullable(); // Nomor HP admin (opsional)
+            $table->timestamps(); // Kolom created_at dan updated_at
         });
 
-        // Membuat tabel petugas
+        // Tabel Petugas
         Schema::create('petugas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users'); // Relasi ke tabel users
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('nama_petugas');
+            $table->string('no_hp')->nullable();
+            $table->string('alamat')->nullable();
             $table->timestamps();
-
         });
 
-         // Membuat tabel anggota
-         Schema::create('anggota', function (Blueprint $table) {
+        // Tabel Anggota
+        Schema::create('anggota', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users'); // Relasi ke tabel users
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('kode_anggota')->unique(); // Kode anggota unik
+            $table->string('nama_lengkap');
+            $table->string('alamat')->nullable();
+            $table->string('no_hp')->nullable();
             $table->timestamps();
         });
     }
@@ -39,7 +47,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        // Menghapus tabel admin, petugas, dan anggota
         Schema::dropIfExists('admins');
         Schema::dropIfExists('petugas');
         Schema::dropIfExists('anggota');
