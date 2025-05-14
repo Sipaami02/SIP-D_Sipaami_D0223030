@@ -1,4 +1,3 @@
-<h1 align="center">COOKIFY</h1>
 <h3 align="center">(Sistem Informasi Perpustakaan Digital Berbasis Web)</h3><br>
 
 <p align="center">
