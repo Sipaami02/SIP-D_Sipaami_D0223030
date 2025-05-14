@@ -1,61 +1,102 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">COOKIFY</h1>
+<h3 align="center">(Sistem Informasi Perpustakaan Digital Berbasis Web)</h3><br>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="public/images/lgo.jpg" alt="Logo Perpustakaan Digital" width="150" height="auto"><br><br>
 </p>
 
-## About Laravel
+<p align="center">
+  <strong>Nama :</strong> Sipaami<br>
+  <strong>NIM :</strong> D0223030
+</p>
+<br><br>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+  Framework Web laravel <br>
+  2025
+</p>
+<br>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tentang SIP-D
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+istem Informasi Perpustakaan Digital (SIP-D) adalah platform berbasis teknologi untuk mempermudah pengelolaan koleksi buku, data pengguna, peminjaman, dan transaksi lainnya di perpustakaan. Sistem ini berfokus pada efisiensi dan aksesibilitas dengan memberikan berbagai fitur yang mendukung operasional perpustakaan secara otomatis dan terstruktur.
 
-## Learning Laravel
+### Role dan fitur-fiturnya
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### 1. Admin (Pengelola aplikasi)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Mengelola data petugas dan anggota
+- Mengelola data buku dan kategori buku
+- Mengelola stok buku
+- Melihat dan mencetak laporan peminjaman
+- Mengelola akun pengguna (buat, edit, hapus)
+- Punya akses penuh terhadap seluruh sistem
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### 2. Petugas 
 
-## Laravel Sponsors
+- Mencatat peminjaman dan pengembalian buku
+- Melihat dan memperbarui data buku 
+- Melihat riwayat peminjaman anggota
+- Mencetak bukti peminjaman
+- Membantu anggota dalam penggunaan sistem
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
+#### 3. Anggota 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+- Melihat koleksi buku dan detailnya
+- Melakukan peminjaman dan pengembalian
+- Melihat riwayat peminjaman pribadi
+- Menerima notifikasi pengembalian
+- Mengelola data profil pribadi
 
-## Contributing
+<br>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Tabel-tabel database beserta field dan tipe datanya
+<br>
 
-## Code of Conduct
+#### Tabel 1 (admin)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+| Nama Field | Tipe Data | Keterangan |
+|-------|-----------|------------|
+| id | bigint | Primary key |
+| euser_id | foreignld | Relasi ke tabel users|
+| nama_admin | string | Nama admin |
+| no_hp | string | no hp admin|
+| created_at | timestamp |Waktu data dibuat|
+|updated_at | timestamp |Waktu data diperbarui|
 
-## Security Vulnerabilities
+<br>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+#### Tabel 2 (Petugas)
 
-## License
+| Nama Field | Tipe Data | Keterangan |
+|-------|-----------|------------|
+| id | bigint | Primary key |
+| euser_id | foreignld | Relasi ke tabel users|
+| nama_petugas | string | Nama petugas |
+| no_hp | string | no hp petugas|
+| alamat | string | alamat petugas|
+| created_at | timestamp |Waktu data dibuat|
+|updated_at | timestamp |Waktu data diperbarui|
+<br>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### Tabel 3 (Anggota)
+
+| Nama Field | Tipe Data | Keterangan |
+|-------|-----------|------------|
+| id | bigint | Primary key |
+| euser_id | foreignld | Relasi ke tabel users|
+| kode_anggota | string | Kode unik anggota |
+| nama_lengkap | string | nama lengkap anggota|
+| alamat | string | alamat anggota|
+| no_hp | string | no hp anggota|
+| created_at | timestamp |Waktu data dibuat|
+|updated_at | timestamp |Waktu data diperbarui|
+<br>
+
+
+### Jenis-jenis Relasi
+
+- Peminjaman ke Anggota (Many-to-One)  
+- Pengguna ke Anggota (One-to-One) 
+- Admin ke Pengguna (One-to-One)
